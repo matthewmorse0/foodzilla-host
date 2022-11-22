@@ -1,7 +1,15 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 html, body {
-    height: 100%;
     margin: 0px;
     padding: 0px;
+}
+
+.card-title {
+    padding-top: 20px;
+}
+
+.md-headline {
+    border-bottom: 4px;
+    border-color: black;
 }

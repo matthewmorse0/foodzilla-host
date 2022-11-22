@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RestaurantCardComponent } from './restaurant-card/restaurant-card.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,12 +10,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIcon, MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { RestaurantTableComponent } from './restaurant-table/restaurant-table.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestaurantTableComponent
+    RestaurantCardComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +26,10 @@ import { RestaurantTableComponent } from './restaurant-table/restaurant-table.co
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
