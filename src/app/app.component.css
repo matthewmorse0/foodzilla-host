@@ -10,11 +10,11 @@
     width: 100%;
 }
 
-.search-bar {
+/* .search-bar {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 ::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
 ::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
