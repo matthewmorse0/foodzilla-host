@@ -22,21 +22,21 @@ export class RestaurantCardComponent implements OnInit {
   title = 'foodzilla-patron';
 
   async ngOnInit () {
-    this.getRests();
+    // this.getRests();
     this.loadTables();
   }
 
-  private async getRests() {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://127.0.0.1:5000/get_all_info");
-    xhr.send();
-    xhr.onload = () => 
-    {
-      var data = xhr.responseText;
-      var response = JSON.parse(data)
-      this.allRests = response.restaurants;
-    }
-  }
+  // private async getRests() {
+  //   let xhr = new XMLHttpRequest();
+  //   xhr.open("GET", "http://127.0.0.1:5000/get_all_info");
+  //   xhr.send();
+  //   xhr.onload = () => 
+  //   {
+  //     var data = xhr.responseText;
+  //     var response = JSON.parse(data)
+  //     this.allRests = response.restaurants;
+  //   }
+  // }
 
   private async loadTables() {
     this.tiles = [];
