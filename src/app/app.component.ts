@@ -40,3 +40,8 @@ export class AppComponent implements OnInit {
     }
   }
 }
+
+function testFunc() {
+  console.log("test");
+  document.getElementById("demo").innerHTML = "Hello World";
+}

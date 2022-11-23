@@ -45,15 +45,18 @@ export class RestaurantCardComponent implements OnInit {
     for(let i = 0; i < diningTables.length; i++) {
       if(diningTables[i] != "0" && diningTables[i] != "|") {
         if(diningTables[i]!= "0" && openTables[i] == "1") {
-          this.tiles.push({seats: diningTables[i], color: "green"});
+          this.tiles.push({seats: diningTables[i], color: "green", pos: i});
         }
         else {
-          this.tiles.push({seats: diningTables[i], color: "red"});
+          this.tiles.push({seats: diningTables[i], color: "red", pos: i});
         }
       }
       else {
-        this.tiles.push({seats: "", color: "white"});
+        this.tiles.push({seats: "", color: "white", pos: i});
       }
     }
+  }
+  testFunc() {
+    console.log("asdfa");
   }
 }
