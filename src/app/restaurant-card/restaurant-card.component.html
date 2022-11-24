@@ -8,6 +8,9 @@
       <mat-panel-description>
         {{ restWaitTime }}
         {{ restMenuLink }}
+        <button id="basic" type="button" mat-button (click)="layoutMode=!layoutMode">
+          Toggle Layout Mode
+        </button>
 
       </mat-panel-description>
     </mat-expansion-panel-header>
@@ -15,9 +18,9 @@
       <mat-grid-list cols="8" colspan = "1" rowHeight="3:2">
         <mat-grid-tile *ngFor = "let tile of tiles"
         [style.background]="tile.color">
-        {{tile.seats}}
-        <button id="basic" type="button" mat-button (click)="updateSeats(tile.pos, tile.color)">
-          Basic button
+        <!-- {{tile.seats}} -->
+        <button id="basic" type="button" mat-button (click)="updateSeats(tile.pos, tile.color, layoutMode)">
+          {{tile.seats}}
         </button>
       </mat-grid-tile>
       </mat-grid-list>

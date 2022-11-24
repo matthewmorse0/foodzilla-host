@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
 
   private async getRest() {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://127.0.0.1:5000/test_view_info?rid=2");
+    xhr.open("GET", "http://127.0.0.1:5000/view_info?rid=2");
     xhr.send();
     xhr.onload = () => 
     {
