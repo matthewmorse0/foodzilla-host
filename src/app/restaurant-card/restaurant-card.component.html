@@ -16,19 +16,10 @@
         <mat-grid-tile *ngFor = "let tile of tiles"
         [style.background]="tile.color">
         {{tile.seats}}
-        <!-- clickedOn.style.backgroundColor = '#f00'; -->
-        <!-- <button onclick="myFunction()" style="display: none;">Click me please click me</button>  -->
-        <!-- <input id="clickMe" type="button" value="clickme" (onclick)="testFunc()" /> -->
-        <button id="basic" type="button" mat-button (click)="testFunc()">
+        <button id="basic" type="button" mat-button (click)="testFunc(tile.pos)">
           Basic button
         </button>
       </mat-grid-tile>
       </mat-grid-list>
     </p>
 </mat-expansion-panel>
-
-<!-- <script>
-  function testFunc() {
-    document.getElementById("demo").innerHTML = "Hello World";
-  }
-</script> -->

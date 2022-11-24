@@ -56,7 +56,17 @@ export class RestaurantCardComponent implements OnInit {
       }
     }
   }
-  testFunc() {
-    console.log("asdfa");
+  testFunc(testVar: Number) {
+    console.log(testVar);
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:5000/test_update_free?rid=2&free=000010000|001000010|00000000");
+    xhr.send();
+    // xhr.onload = () => 
+    // {
+    //   var data = xhr.responseText;
+    //   var response = JSON.parse(data)
+    //   this.allRests = response.rest_info;
+    //   console.log(this.allRests);
+    // }
   }
 }
