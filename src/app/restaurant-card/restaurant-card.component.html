@@ -16,7 +16,7 @@
         <mat-grid-tile *ngFor = "let tile of tiles"
         [style.background]="tile.color">
         {{tile.seats}}
-        <button id="basic" type="button" mat-button (click)="testFunc(tile.pos)">
+        <button id="basic" type="button" mat-button (click)="updateSeats(tile.pos, tile.color)">
           Basic button
         </button>
       </mat-grid-tile>

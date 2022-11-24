@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { setupTestingRouter } from '@angular/router/testing';
 import { RestaurantObject } from 'src/assets/restObject';
 import { TileObject } from 'src/assets/tileObject';
 
@@ -56,17 +57,19 @@ export class RestaurantCardComponent implements OnInit {
       }
     }
   }
-  testFunc(testVar: Number) {
-    console.log(testVar);
+  updateSeats(index: number, color: string) {
+    let freeTablesArr: string[] = [...this.restFreeTables];
+    var freeTables = '';
+    if(freeTablesArr[index] == '0' && color != "white"){
+      freeTablesArr[index] = '1';
+    }else if (freeTablesArr[index] == '1'){
+      freeTablesArr[index] = '0';
+    }
+    for (let i = 0; i < freeTablesArr.length; i++) {
+      freeTables += freeTablesArr[i];
+    }
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://127.0.0.1:5000/test_update_free?rid=2&free=000010000|001000010|00000000");
+    xhr.open("POST", "http://127.0.0.1:5000/test_update_free?rid=2&free="+freeTables);
     xhr.send();
-    // xhr.onload = () => 
-    // {
-    //   var data = xhr.responseText;
-    //   var response = JSON.parse(data)
-    //   this.allRests = response.rest_info;
-    //   console.log(this.allRests);
-    // }
   }
 }
