@@ -4,15 +4,6 @@
 </div>
 
 <body class="content">
-  <!-- <p class="search-bar">
-    <mat-form-field appearance="outline" [style.width.%]=65>
-      <mat-label>Search</mat-label>
-      <input matInput placeholder="Search">
-    </mat-form-field>
-    <button mat-mini-fab color="white" aria-label="Scan QR Code">
-      <mat-icon>camera_alt</mat-icon>
-    </button>
-  </p> -->
   <app-restaurant-card *ngFor="let rests of allRests" class="cards" 
   [restName]="rests[0]"
   [restId]="rests[1]"
