@@ -58,14 +58,14 @@ export class RestaurantCardComponent implements OnInit {
         freeTables += freeTablesArr[i];
       }
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://127.0.0.1:5000/update_free?rid=2&free="+freeTables);
+      xhr.open("POST", "http://127.0.0.1:5000/update_free?rid=2&free="+freeTables, false);
       xhr.send();
     }else{
       let diningTables: string[] = [...this.restDiningTables];
       var tables = '';
       if(color == "white"){
         diningTables[index] = '1';
-      }else if (Number(diningTables[index]) < 9){
+      }else if (Number(diningTables[index]) < 9 && color == "red"){
         diningTables[index] = String(Number(diningTables[index]) + 1);
       }else{
         diningTables[index] = '0';
@@ -74,7 +74,7 @@ export class RestaurantCardComponent implements OnInit {
         tables += diningTables[i];
       }
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://127.0.0.1:5000/update_layout?rid=2&tables="+tables);
+      xhr.open("POST", "http://127.0.0.1:5000/update_layout?rid=2&tables="+tables, false);
       xhr.send();
     }
     window.location.reload();
