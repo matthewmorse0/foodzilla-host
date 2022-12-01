@@ -5,11 +5,17 @@
           {{ restName }}
         </h3>
       </mat-panel-title>
-      <mat-panel-description>
-        {{ restWaitTime }}
-        {{ restMenuLink }}
+      <mat-panel-description class="flex-container">
+        <div>{{ restMenuLink }}</div>
+        <div>{{waitlist}} | Wait Time: {{ restWaitTime }} min</div>
         <button id="basic" type="button" mat-button (click)="layoutMode=!layoutMode">
           Toggle Layout Mode
+        </button>
+        <button id="basic" type="button" mat-button (click)="addWaitlist()">
+          add waitlist
+        </button>
+        <button id="basic" type="button" mat-button (click)="removeWaitlist()">
+          remove waitlist
         </button>
 
       </mat-panel-description>

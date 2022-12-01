@@ -3,6 +3,7 @@ export interface RestaurantObject {
     id: number;
     managerId: string;
     waitTime: number;
+    waitlist: number;
     menuLink: string;
     diningTables: string;
     freeTables: string;

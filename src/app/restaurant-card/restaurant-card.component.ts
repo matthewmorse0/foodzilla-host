@@ -14,6 +14,7 @@ export class RestaurantCardComponent implements OnInit {
   @Input() restId: number;
   @Input() restManagerId: string;
   @Input() restWaitTime: number;
+  @Input() waitlist: number;
   @Input() restMenuLink: string;
   @Input() restDiningTables: string;
   @Input() restFreeTables: string;
@@ -77,6 +78,20 @@ export class RestaurantCardComponent implements OnInit {
       xhr.open("POST", "http://127.0.0.1:5000/update_layout?rid=2&tables="+tables, false);
       xhr.send();
     }
+    window.location.reload();
+  }
+
+  addWaitlist() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:5000/add_waitlist?rid=2", false);
+    xhr.send();
+    window.location.reload();
+  }
+
+  removeWaitlist() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:5000/remove_waitlist?rid=2", false);
+    xhr.send();
     window.location.reload();
   }
 }
